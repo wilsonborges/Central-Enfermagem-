@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#079779"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Enfermagem"><link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icon.svg" type="image/svg+xml"><title>Central de Enfermagem</title>
+<style>
+:root{color-scheme:light dark;--bg:#f4f8fa;--surface:#fff;--soft:#eaf5f3;--text:#162839;--muted:#687b89;--line:#dce8e9;--accent:#078c74;--warn:#fff1cb;--warntext:#684b14}
+@media(prefers-color-scheme:dark){:root{--bg:#0c1824;--surface:#152636;--soft:#163d3b;--text:#f0f6f8;--muted:#9bb1c0;--line:#2a414d;--accent:#5de0bb;--warn:#483919;--warntext:#f4d88e}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{padding:calc(24px + env(safe-area-inset-top)) 18px 18px;background:radial-gradient(ellipse at 100% 0%,rgba(29,175,151,.14),transparent 65%)}.wrap,main{max-width:620px;margin:auto}.brand{display:flex;align-items:center;gap:12px}.brandmark{background:linear-gradient(140deg,#16be9f,#067e70);border-radius:16px;width:52px;height:52px;display:grid;place-items:center;color:white;font-size:35px;font-weight:bold}h1{font-size:24px;line-height:1.09;margin:0;letter-spacing:-.7px}header p{color:var(--muted);margin:13px 0 0;font-size:13px}main{padding:4px 17px 70px}h2{font-size:18px;letter-spacing:-.3px;margin:20px 2px 12px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tile{min-height:73px;border:1px solid var(--line);border-radius:16px;background:var(--surface);color:var(--text);text-align:left;display:flex;gap:9px;align-items:center;padding:14px;font:700 14px inherit;box-shadow:0 6px 18px #102f3110;cursor:pointer}.tile span:first-child{font-size:23px;color:var(--accent)}.tile b{font-weight:650}.tile small{margin-left:auto;color:var(--muted)}.soon{opacity:.50}.notice,.card{background:var(--surface);border:1px solid var(--line);border-radius:17px;padding:16px}.notice{font-size:12px;line-height:1.55;color:var(--muted);margin-top:17px}.view{display:none}.view.active{display:block}.head{display:flex;align-items:center;gap:12px;margin-top:12px;margin-bottom:15px}.back{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:12px;padding:11px 14px;font-size:15px;cursor:pointer}.head h2{margin:0}.field{display:flex;align-items:center;justify-content:space-between;gap:9px;padding:12px 0;border-bottom:1px solid var(--line)}.field:last-child{border:0}.field label{font-weight:600;flex:1}.field small{display:block;color:var(--muted);font-weight:400;font-size:11px;margin-top:4px}.field select,.field input{width:44%;min-width:100px;max-width:180px;padding:11px 8px;border-radius:10px;color:var(--text);background:var(--bg);border:1px solid var(--line);font-size:15px}.output{margin-top:13px;background:var(--soft);padding:18px;border-radius:17px}.output .value{font-size:38px;font-weight:800;letter-spacing:-1px}.output .detail{font-size:13px;color:var(--muted)}.caution{background:var(--warn);color:var(--warntext);font-size:12px;line-height:1.55;border-radius:13px;padding:13px;margin-top:12px}.button{border:none;background:#078c74;color:#fff;border-radius:12px;width:100%;margin-top:12px;padding:14px;font-weight:700;font-size:14px;cursor:pointer}.tiny{color:var(--muted);font-size:12px;line-height:1.5;margin-top:16px}.status{color:var(--accent);font-size:12px;margin-top:8px}#search{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:13px;width:100%;margin-top:18px;color:var(--text);font-size:14px}
+</style></head><body>
+<header><div class="wrap"><div class="brand"><span class="brandmark">+</span><h1>Central de<br>Enfermagem</h1></div><p>Calculadoras e apoio clínico · Protótipo 0.1</p><input id="search" placeholder="Buscar calculadora..." aria-label="Buscar calculadora"><div class="status" id="offline"></div></div></header>
+<main>
+<section id="home" class="view active"><h2>Calculadoras</h2><div id="tiles" class="grid">
+<button class="tile" data-page="news"><span>⌁</span><b>NEWS2</b><small>›</small></button>
+<button class="tile" data-page="glasgow"><span>◈</span><b>Glasgow</b><small>›</small></button>
+<button class="tile" data-page="gotejo"><span>♧</span><b>Gotejamento</b><small>›</small></button>
+<button class="tile" data-page="pam"><span>♡</span><b>PAM</b><small>›</small></button>
+</div><h2>Em preparação</h2><div class="grid"><div class="tile soon">qSOFA</div><div class="tile soon">Braden</div><div class="tile soon">Morse</div><div class="tile soon">Dengue A–D</div></div><div class="notice"><strong>Versão de demonstração.</strong> Os cálculos e a interpretação clínica ainda exigem validação independente e confrontação com protocolos institucionais antes de utilização assistencial. Não insira identificação de pacientes.</div></section>
+<section id="news" class="view"><div class="head"><button class="back" data-home>‹ Voltar</button><h2>NEWS2</h2></div><div class="card">
+<div class="field"><label>Escala SpO₂<small>Escala 2 somente com indicação clínica documentada</small></label><select id="satScale"><option value="1">Escala 1</option><option value="2">Escala 2</option></select></div>
+<div class="field"><label>FR <small>irpm</small></label><input id="fr" type="number" min="1" value="18"></div>
+<div class="field"><label>SpO₂ <small>%</small></label><input id="sat" type="number" min="0" max="100" value="97"></div>
+<div class="field"><label>Oxigênio suplementar</label><select id="oxygen"><option value="0">Não</option><option value="2">Sim</option></select></div>
+<div class="field"><label>PAS <small>mmHg</small></label><input id="pas" type="number" min="1" value="120"></div>
+<div class="field"><label>FC <small>bpm</small></label><input id="fc" type="number" min="1" value="80"></div>
+<div class="field"><label>Temperatura <small>°C</small></label><input id="temp" type="number" step=".1" value="36.7"></div>
+<div class="field"><label>Consciência (ACVPU)</label><select id="mental"><option value="0">Alerta sem confusão nova</option><option value="3">Confusão nova / V / P / U</option></select></div>
+</div><div class="output"><div class="detail">Pontuação NEWS2</div><div id="newsScore" class="value">0</div><strong id="newsDetail">—</strong></div>
+<div class="caution">NEWS2 não substitui avaliação clínica. Escore total ≥5, ≥7 ou pontuação 3 em um parâmetro isolado pode exigir resposta específica do protocolo. Confirme a indicação da Escala 2 e o uso de oxigênio.</div><button class="button" data-copy="news">Copiar resultado</button>
+</section>
+<section id="glasgow" class="view"><div class="head"><button class="back" data-home>‹ Voltar</button><h2>Glasgow</h2></div><div class="card">
+<div class="field"><label>Abertura ocular</label><select id="eye"><option value="4">4 · Espontânea</option><option value="3">3 · À voz</option><option value="2">2 · À dor</option><option value="1">1 · Ausente</option></select></div>
+<div class="field"><label>Resposta verbal</label><select id="verbal"><option value="5">5 · Orientada</option><option value="4">4 · Confusa</option><option value="3">3 · Palavras inapropriadas</option><option value="2">2 · Sons</option><option value="1">1 · Ausente</option></select></div>
+<div class="field"><label>Resposta motora</label><select id="motor"><option value="6">6 · Obedece comandos</option><option value="5">5 · Localiza dor</option><option value="4">4 · Retirada à dor</option><option value="3">3 · Flexão anormal</option><option value="2">2 · Extensão</option><option value="1">1 · Ausente</option></select></div>
+</div><div class="output"><div class="detail">Escore de Glasgow</div><div class="value" id="gcsScore">15</div><strong id="gcsDetail">E4 V5 M6</strong></div><div class="caution">Quando um componente não puder ser testado, registre NT conforme referência apropriada. Não atribua automaticamente pontuação 1.</div><button class="button" data-copy="glasgow">Copiar resultado</button></section>
+<section id="gotejo" class="view"><div class="head"><button class="back" data-home>‹ Voltar</button><h2>Gotejamento</h2></div><div class="card">
+<div class="field"><label>Volume <small>mL</small></label><input id="vol" type="number" min="0" value="500"></div>
+<div class="field"><label>Tempo <small>horas</small></label><input id="hours" type="number" min=".01" step=".5" value="4"></div>
+<div class="field"><label>Equipo</label><select id="factor"><option value="20">20 gotas/mL</option><option value="60">60 gotas/mL</option><option value="15">15 gotas/mL</option><option value="10">10 gotas/mL</option></select></div>
+</div><div class="output"><div class="detail">Velocidade de infusão</div><div class="value" id="drops">42</div><strong>gotas/min</strong><div class="detail" id="rate">125 mL/h</div></div><div class="caution">Confira o fator impresso no equipo, a prescrição e o tipo de infusão. Gotas/min é arredondado para um número inteiro.</div><button class="button" data-copy="gotejo">Copiar resultado</button></section>
+<section id="pam" class="view"><div class="head"><button class="back" data-home>‹ Voltar</button><h2>Pressão arterial média</h2></div><div class="card">
+<div class="field"><label>PAS <small>mmHg</small></label><input id="pamPas" type="number" min="1" value="120"></div>
+<div class="field"><label>PAD <small>mmHg</small></label><input id="pad" type="number" min="0" value="80"></div>
+</div><div class="output"><div class="detail">PAM estimada</div><div class="value" id="pamScore">93.3</div><strong>mmHg</strong></div><div class="caution">Fórmula aproximada: (PAS + 2 × PAD) / 3. Não substitui medida direta nem avaliação hemodinâmica.</div><button class="button" data-copy="pam">Copiar resultado</button></section>
+<p class="tiny">Protótipo educacional · Sem armazenamento de dados dos pacientes · Validação clínica pendente · v0.1</p>
+</main><script>
+const el=id=>document.getElementById(id), get=id=>Number(el(id).value);
+const result={};
+function page(p){document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===p));el("search").style.display=p==="home"?"block":"none";window.scrollTo(0,0);location.hash=p==="home"?"":p}
+document.querySelectorAll("[data-page]").forEach(x=>x.onclick=()=>page(x.dataset.page));
+document.querySelectorAll("[data-home]").forEach(x=>x.onclick=()=>page("home"));
+el("search").oninput=()=>{let q=el("search").value.toLowerCase();document.querySelectorAll("#tiles .tile").forEach(x=>x.style.display=x.textContent.toLowerCase().includes(q)?"flex":"none")};
+const fr=n=>n<=8?3:n<=11?1:n<=20?0:n<=24?2:3;
+const sat1=n=>n<=91?3:n<=93?2:n<=95?1:0;
+const sat2=n=>n<=83?3:n<=85?2:n<=87?1:n<=92?0:n<=94?1:n<=96?2:3;
+const bp=n=>n<=90?3:n<=100?2:n<=110?1:n<=219?0:3;
+const pulse=n=>n<=40?3:n<=50?1:n<=90?0:n<=110?1:n<=130?2:3;
+const temperature=n=>n<=35?3:n<=36?1:n<=38?0:n<=39?1:2;
+function valid(ids){return ids.every(k=>el(k).value.trim()!==""&&Number.isFinite(get(k)))}
+function refresh(){
+ const ok=valid(["fr","sat","pas","fc","temp"])&&get("fr")>0&&get("sat")>=0&&get("sat")<=100&&get("pas")>0&&get("fc")>0&&get("temp")>=25&&get("temp")<=45;
+ const segments=ok?[fr(get("fr")),el("satScale").value==="1"?sat1(get("sat")):sat2(get("sat")),get("oxygen"),bp(get("pas")),pulse(get("fc")),temperature(get("temp")),get("mental")]:[];
+ const score=ok?segments.reduce((a,b)=>a+b,0):null;
+ el("newsScore").textContent=score===null?"—":score;
+ el("newsDetail").textContent=score===null?"Preencha valores válidos":score>=7?"Escore elevado":score>=5?"Escore intermediário":segments.includes(3)?"Parâmetro isolado com 3 pontos":score>0?"Escore baixo":"Escore zero";
+ result.news=ok?"NEWS2 "+score+" | FR "+get("fr")+" | SpO₂ "+get("sat")+"% | Escala "+el("satScale").value+" | O₂ "+(get("oxygen")?"sim":"não")+" | PAS "+get("pas")+" | FC "+get("fc")+" | T "+get("temp")+"°C | ACVPU "+(get("mental")?"alterada":"alerta"):null;
+ const e=get("eye"),v=get("verbal"),m=get("motor");
+ el("gcsScore").textContent=e+v+m;el("gcsDetail").textContent="E"+e+" V"+v+" M"+m;result.glasgow="Glasgow "+(e+v+m)+" (E"+e+" V"+v+" M"+m+")";
+ const dripOk=valid(["vol","hours"])&&get("vol")>=0&&get("hours")>0;
+ const ml=dripOk?get("vol")/get("hours"):0,drop=ml*get("factor")/60;
+ el("drops").textContent=dripOk?Math.round(drop):"—";el("rate").textContent=dripOk?Number(ml.toFixed(2))+" mL/h":"Informe valores válidos";
+ result.gotejo=dripOk?"Gotejamento: "+get("vol")+"mL em "+get("hours")+"h; fator "+get("factor")+"gotas/mL; "+Math.round(drop)+"gotas/min; "+Number(ml.toFixed(2))+"mL/h.":null;
+ const pamOk=valid(["pamPas","pad"])&&get("pamPas")>0&&get("pad")>=0&&get("pamPas")>=get("pad");
+ const pam=pamOk?(get("pamPas")+2*get("pad"))/3:0;
+ el("pamScore").textContent=pamOk?Number(pam.toFixed(1)):"—";
+ result.pam=pamOk?"PAM estimada: "+Number(pam.toFixed(1))+" mmHg (PAS "+get("pamPas")+", PAD "+get("pad")+").":null
+}
+document.querySelectorAll("input,select").forEach(x=>x.addEventListener("input",refresh));
+document.querySelectorAll("[data-copy]").forEach(x=>x.onclick=async()=>{let value=result[x.dataset.copy];if(!value)return alert("Preencha valores válidos.");try{await navigator.clipboard.writeText(value);x.textContent="Copiado!";setTimeout(()=>x.textContent="Copiar resultado",1200)}catch{prompt("Copie:",value)}});
+refresh();if(["news","glasgow","gotejo","pam"].includes(location.hash.slice(1)))page(location.hash.slice(1));
+if("serviceWorker" in navigator){navigator.serviceWorker.register("./sw.js").then(()=>el("offline").textContent="Offline disponível após armazenamento inicial dos arquivos").catch(()=>el("offline").textContent="Não foi possível ativar o modo offline")}
+</script></body></html>
