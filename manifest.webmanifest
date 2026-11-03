@@ -1,0 +1,19 @@
+{
+  "name": "Central de Enfermagem",
+  "short_name": "Enfermagem",
+  "description": "Protótipo de calculadoras de apoio clínico para enfermagem",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f8fa",
+  "theme_color": "#078c74",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
