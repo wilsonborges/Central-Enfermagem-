@@ -1,4 +1,4 @@
-const CACHE = 'central-enfermagem-v0-6';
+const CACHE = 'central-enfermagem-v0-7';
 const FILES = ['./', './index.html', './manifest.webmanifest', './icon.svg'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(FILES)).then(() => self.skipWaiting()));
