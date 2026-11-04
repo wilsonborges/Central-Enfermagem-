@@ -40,3 +40,6 @@ O proprietário é enfermeiro e pede mudanças incrementais, com arquivos pronto
 
 ## Escopo atual autorizado (04/11/2026)
 O proprietário solicitou explicitamente remover todas as calculadoras e abrir diretamente na escala. Não reintroduzir calculadoras ou o menu inicial sem solicitação. Tema com apenas ícones ☀️ e 🌑 na interface; preservar nomes acessíveis para leitores de tela.
+
+## Publicação autorizada pelo proprietário
+Toda mudança solicitada deve ser implementada, verificada e publicada automaticamente no GitHub Pages. Pedidos de opinião ou sugestão não autorizam alterações. Uma instrução específica para não publicar prevalece sobre esta preferência.
