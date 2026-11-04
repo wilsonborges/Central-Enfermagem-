@@ -1,7 +1,7 @@
 {
-  "name": "Central de Enfermagem",
-  "short_name": "Enfermagem",
-  "description": "Protótipo de calculadoras de apoio clínico para enfermagem",
+  "name": "Minha Escala — Enf. Wilson Borges",
+  "short_name": "Minha Escala",
+  "description": "Calendário de plantões, unidades e trocas de escala.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

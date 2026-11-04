@@ -1,7 +1,7 @@
 # Instruções do projeto — Central de Enfermagem
 
 ## Objetivo
-Manter e evoluir um PWA brasileiro de calculadoras e apoio educacional à enfermagem, otimizado para iPhone e uso na UPA. Interface minimalista em português, responsiva e com modo claro/escuro.
+Manter e evoluir um PWA brasileiro dedicado à escala de plantões, otimizado para iPhone. Interface minimalista em português, responsiva e com modo claro/escuro.
 
 ## Fonte de verdade
 Repositório: `wilsonborges/Central-Enfermagem-`. Branch principal: `main`.
@@ -9,7 +9,7 @@ Publicação: GitHub Pages a partir de `main` / `(root)`.
 Endereço esperado: https://wilsonborges.github.io/Central-Enfermagem-/
 
 ## Estrutura existente
-- `index.html`: interface, estilos CSS e lógica JavaScript das calculadoras.
+- `index.html`: interface, estilos CSS e lógica JavaScript da escala.
 - `manifest.webmanifest`: metadados de instalação do PWA.
 - `sw.js`: service worker e cache offline.
 - `icon.svg`: ícone.
@@ -23,7 +23,7 @@ Endereço esperado: https://wilsonborges.github.io/Central-Enfermagem-/
 4. Nunca tratar protótipo educacional como ferramenta clinicamente validada. Toda calculadora deve ter testes de limites, unidades, regras especiais, fonte, versão e data de revisão antes de uso assistencial.
 5. NEWS2: observar regras completas de saturação escala 1/2, oxigênio, ACVPU, pontuação isolada 3 e critérios de escalonamento. Escala 2 exige indicação clínica específica. Não emitir condutas automáticas como substitutas dos protocolos.
 6. Preservar design limpo, navegação por toque, acessibilidade, contraste e português brasileiro.
-7. Evitar regressões: antes de concluir, testar as calculadoras NEWS2, Glasgow, PAM e gotejamento, os modos claro/escuro, instalação e funcionamento offline.
+7. Evitar regressões: antes de concluir, testar cadastro/edição de plantões, trocas, repetição, unidades, filtros, backup/importação, os modos claro/escuro, instalação e funcionamento offline.
 8. Sempre fornecer resumo das alterações, testes executados, riscos e limitações. Preferir alterações revisáveis em branch/pull request antes de unir à `main`.
 9. Não armazenar informações identificáveis de pacientes. Não incluir formulários para dados sensíveis sem definição de segurança institucional e autorização apropriada.
 10. Ao modificar assets/cache, atualizar a versão de cache do service worker e validar atualização do PWA.
@@ -37,3 +37,6 @@ Endereço esperado: https://wilsonborges.github.io/Central-Enfermagem-/
 
 ## Preferências do proprietário
 O proprietário é enfermeiro e pede mudanças incrementais, com arquivos prontos e mínima necessidade de edição manual. Explicar decisões em linguagem acessível e apresentar riscos clínicos com clareza.
+
+## Escopo atual autorizado (04/11/2026)
+O proprietário solicitou explicitamente remover todas as calculadoras e abrir diretamente na escala. Não reintroduzir calculadoras ou o menu inicial sem solicitação. Tema com apenas ícones ☀️ e 🌑 na interface; preservar nomes acessíveis para leitores de tela.
