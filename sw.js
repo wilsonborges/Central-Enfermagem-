@@ -1,4 +1,4 @@
-const CACHE = 'central-enfermagem-v0-58';
+const CACHE = 'central-enfermagem-v0-59';
 const FILES = ['./', './index.html', './manifest.webmanifest', './icon.svg', './logo-enfermeiro-direto.svg', './logo-ed-wilson-borges.jpg', './logo-ed-wilson-borges.svg'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(FILES)).then(() => self.skipWaiting()));
