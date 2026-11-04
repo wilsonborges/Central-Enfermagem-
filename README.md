@@ -1,2 +1,2 @@
-# Central-Enfermagem-
-Calculadoras de enfermagem 
+# Escala-Enfermagem
+Escala de enfermagem 
