@@ -7,3 +7,6 @@ Preservar plantões e os nomes das chaves de armazenamento existentes (`central-
 Tema: botões discretos ☀️ e 🌑, com nomes acessíveis e preferência persistida. A preferência automática anterior continua respeitada até uma escolha explícita. Manter logotipos com contraste adequado em ambos os temas.
 
 Preservar cadastro/edição/exclusão, repetição 12×36, marcação de troca, filtros, backup/importação, ícones PNG e funcionamento offline. Publicação pelo GitHub Pages em `main` / raiz.
+
+## Aparência da agenda
+Cabeçalho compacto com logotipos adaptados aos temas. Formulário em `#shiftEditor`, recolhido por padrão; abrir ao selecionar uma data ou editar um plantão e recolher após salvar. Cartões destacam horários, unidade e observações; ações em menu nativo `details` com ícone ⋯. O gesto antigo de deslizar cartões foi substituído por esse menu. Manter alvos de toque, foco visível e contraste no modo escuro.
