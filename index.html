@@ -59,7 +59,7 @@ input:focus,select:focus,textarea:focus,button:focus-visible{outline:none;border
 </main><script>
 const el=id=>document.getElementById(id), get=id=>Number(el(id).value);
 const result={};
-function page(p){document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===p));window.scrollTo(0,0);location.hash=p==="home"?"":p}
+function page(p){document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===p));history.replaceState(null,"",p==="home"?location.pathname+location.search:"#"+p);window.scrollTo(0,0)}
 document.querySelectorAll("[data-page]").forEach(x=>x.onclick=()=>page(x.dataset.page));
 document.querySelectorAll("[data-home]").forEach(x=>x.onclick=()=>page("home"));
 
